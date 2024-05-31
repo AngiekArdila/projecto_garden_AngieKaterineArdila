@@ -18,7 +18,21 @@ CREATE TABLE forma_pago(
 	tipo VARCHAR(50),
 	PRIMARY KEY(id_forma_pago)
 );
+CREATE TABLE jefe(
 
+	codigo_jefe INT(11),
+	
+	nombre VARCHAR(50),
+	
+	apellido1 VARCHAR(50),
+	
+	apellido2 VARCHAR(50),
+	
+	id_telefonojefe INT(11),
+	
+	PRIMARY KEY (codigo_jefe)
+
+);
 CREATE TABLE pais(
 	id_pais INT(11) NOT NULL,
 	nombre VARCHAR(50) NOT NULL,
@@ -87,9 +101,10 @@ codigo_jefe INT(11),
 puesto VARCHAR(50),
 id_telefonoempleado INT(11) NOT NULL,
 PRIMARY KEY(codigo_empleado),
-CONSTRAINT FK_oficina_empleado FOREIGN KEY(codigo_oficina) REFERENCES oficina(codigo_oficina)
-);
+CONSTRAINT FK_oficina_empleado FOREIGN KEY(codigo_oficina) REFERENCES oficina(codigo_oficina),
+FOREIGN KEY (codigo_jefe) REFERENCES jefe(codigo_jefe)
 
+);
 
 
 
@@ -182,15 +197,6 @@ CONSTRAINT FK_producto_proveedor FOREIGN KEY(codigo_producto) REFERENCES product
 
 
 
-
-CREATE TABLE jefe(
-codigo_jefe INT(11),
-nombre VARCHAR(50),
-apellido1 VARCHAR(50),
-apellido2 VARCHAR(50),
-id_telefonojefe INT(11),
-PRIMARY KEY (codigo_jefe)
-);
 
 CREATE TABLE telefonojefe(
 codigo_jefe INT(11) NOT NULL,
