@@ -37,6 +37,7 @@ INSERT INTO forma_pago (id_forma_pago, tipo) VALUES
 (9, 'Ethereum'),
 (10, 'Ripple');
 
+
 -- Inserting data into pais
 INSERT INTO pais (id_pais, nombre) VALUES 
 (1, 'Estados Unidos'),
@@ -194,17 +195,7 @@ INSERT INTO proveedor (id_proveedor, nombre, apellido1, apellido2, email, codigo
 ('PRV10', 'Proveedor 10', 'Apellido1', 'Apellido2', 'proveedor10@example.com', 'OFC10', 'P010');
 
 -- Inserting data into jefe
-INSERT INTO jefe (codigo_jefe, nombre, apellido1, apellido2, id_telefonojefe) VALUES 
-(1, 'Jefe 1', 'Apellido1', 'Apellido2', 1),
-(2, 'Jefe 2', 'Apellido1', 'Apellido2', 2),
-(3, 'Jefe 3', 'Apellido1', 'Apellido2', 3),
-(4, 'Jefe 4', 'Apellido1', 'Apellido2', 4),
-(5, 'Jefe 5', 'Apellido1', 'Apellido2', 5),
-(6, 'Jefe 6', 'Apellido1', 'Apellido2', 6),
-(7, 'Jefe 7', 'Apellido1', 'Apellido2', 7),
-(8, 'Jefe 8', 'Apellido1', 'Apellido2', 8),
-(9, 'Jefe 9', 'Apellido1', 'Apellido2', 9),
-(10, 'Jefe 10', 'Apellido1', 'Apellido2', 10);
+
 
 -- Inserting data into telefonojefe
 INSERT INTO telefonojefe (codigo_jefe, nombre, apellido1, apellido2, celular1, celular2, telefonofijo) VALUES 
