@@ -9,55 +9,41 @@ imagen VARCHAR(256),
 PRIMARY KEY(gama)
 );
  CREATE TABLE estado_pedido(
-	 id_estado_pedido INT(11) NOT NULL,
-	 estado VARCHAR(50),
-	 PRIMARY KEY (id_estado_pedido)
+id_estado_pedido INT(11) NOT NULL,
+estado VARCHAR(50),
+PRIMARY KEY (id_estado_pedido)
  );
 CREATE TABLE forma_pago(
-	id_forma_pago INT(11) NOT NULL,
-	tipo VARCHAR(50),
-	PRIMARY KEY(id_forma_pago)
+id_forma_pago INT(11) NOT NULL,
+tipo VARCHAR(50),
+PRIMARY KEY(id_forma_pago)
 );
-CREATE TABLE jefe(
 
-	codigo_jefe INT(11),
-	
-	nombre VARCHAR(50),
-	
-	apellido1 VARCHAR(50),
-	
-	apellido2 VARCHAR(50),
-	
-	id_telefonojefe INT(11),
-	
-	PRIMARY KEY (codigo_jefe)
-
-);
 CREATE TABLE pais(
-	id_pais INT(11) NOT NULL,
-	nombre VARCHAR(50) NOT NULL,
-	
-	PRIMARY KEY (id_pais)
+id_pais INT(11) NOT NULL,
+nombre VARCHAR(50) NOT NULL,
+
+PRIMARY KEY (id_pais)
 );
 
 CREATE TABLE region(
-	id_region INT(11) NOT NULL,
-	nombre VARCHAR(50) NOT NULL,
-	id_pais INT,
+id_region INT(11) NOT NULL,
+nombre VARCHAR(50) NOT NULL,
+id_pais INT,
 
-	PRIMARY KEY (id_region),
-	CONSTRAINT FK_pais_region FOREIGN KEY (id_pais) REFERENCES pais(id_pais)
+PRIMARY KEY (id_region),
+CONSTRAINT FK_pais_region FOREIGN KEY (id_pais) REFERENCES pais(id_pais)
 );
 
 CREATE TABLE ciudad(
-	id_ciudad INT(11) NOT NULL,
-	nombre VARCHAR(50) NOT NULL,
-	id_pais INT,
-	id_region INT,
-	PRIMARY KEY(id_ciudad),
-	
-	CONSTRAINT FK_pais_cuidad FOREIGN KEY (id_pais) REFERENCES pais(id_pais),
-	CONSTRAINT FK_region_ciudad FOREIGN KEY (id_region) REFERENCES region(id_region)
+id_ciudad INT(11) NOT NULL,
+nombre VARCHAR(50) NOT NULL,
+id_pais INT,
+id_region INT,
+PRIMARY KEY(id_ciudad),
+
+CONSTRAINT FK_pais_cuidad FOREIGN KEY (id_pais) REFERENCES pais(id_pais),
+CONSTRAINT FK_region_ciudad FOREIGN KEY (id_region) REFERENCES region(id_region)
 );
 
 
@@ -101,10 +87,9 @@ codigo_jefe INT(11),
 puesto VARCHAR(50),
 id_telefonoempleado INT(11) NOT NULL,
 PRIMARY KEY(codigo_empleado),
-CONSTRAINT FK_oficina_empleado FOREIGN KEY(codigo_oficina) REFERENCES oficina(codigo_oficina),
-FOREIGN KEY (codigo_jefe) REFERENCES jefe(codigo_jefe)
-
+CONSTRAINT FK_oficina_empleado FOREIGN KEY(codigo_oficina) REFERENCES oficina(codigo_oficina)
 );
+
 
 
 
@@ -144,26 +129,26 @@ CREATE TABLE cliente(
 
 
 CREATE TABLE pago(
-	id_transaccion VARCHAR(50) NOT NULL,
-	codigo_cliente INT(11),
-	forma_pago INT,
-	fecha_pago DATE NOT NULL,
-	total DECIMAL(15,2) NOT NULL,
-	PRIMARY KEY(id_transaccion),
-	FOREIGN KEY (codigo_cliente) REFERENCES cliente(codigo_cliente),
-	FOREIGN KEY (forma_pago) REFERENCES forma_pago(id_forma_pago)
+id_transaccion VARCHAR(50) NOT NULL,
+codigo_cliente INT(11),
+forma_pago INT,
+fecha_pago DATE NOT NULL,
+total DECIMAL(15,2) NOT NULL,
+PRIMARY KEY(id_transaccion),
+FOREIGN KEY (codigo_cliente) REFERENCES cliente(codigo_cliente),
+FOREIGN KEY (forma_pago) REFERENCES forma_pago(id_forma_pago)
 );
 
 CREATE TABLE pedido(
-	codigo_pedido INT(11) NOT NULL,
-	fecha_pedido DATE NOT NULL,
-	fecha_entrega DATE,
-	estado INT,
-	comentario TEXT,
-	codigo_cliente INT(11),
-	PRIMARY KEY(codigo_pedido),
-	CONSTRAINT FK_cliente_pedido FOREIGN KEY (codigo_cliente) REFERENCES cliente(codigo_cliente),
-	FOREIGN KEY(estado) REFERENCES estado_pedido(id_estado_pedido)
+codigo_pedido INT(11) NOT NULL,
+fecha_pedido DATE NOT NULL,
+fecha_entrega DATE,
+estado INT,
+comentario TEXT,
+codigo_cliente INT(11),
+PRIMARY KEY(codigo_pedido),
+CONSTRAINT FK_cliente_pedido FOREIGN KEY (codigo_cliente) REFERENCES cliente(codigo_cliente),
+FOREIGN KEY(estado) REFERENCES estado_pedido(id_estado_pedido)
 );
 
 CREATE TABLE detalle_pedido(
@@ -198,21 +183,6 @@ CONSTRAINT FK_producto_proveedor FOREIGN KEY(codigo_producto) REFERENCES product
 
 
 
-CREATE TABLE telefonojefe(
-codigo_jefe INT(11) NOT NULL,
-nombre VARCHAR(50) NOT NULL,
-apellido1 VARCHAR(50) NOT NULL,
-apellido2 VARCHAR(50) NOT NULL,
-celular1 VARCHAR(50) NOT NULL,
-celular2 VARCHAR(50) ,
-telefonofijo VARCHAR(50),
-PRIMARY KEY(codigo_jefe),
-FOREIGN KEY(codigo_jefe) REFERENCES jefe(codigo_jefe)
-);
-
-
-
-
 
 
 CREATE TABLE telefonocliente(
@@ -240,6 +210,7 @@ telefonofijo VARCHAR(50),
 codigo_oficina VARCHAR(10),
 PRIMARY KEY(telefono),
 CONSTRAINT FK_oficina_telefonooficina FOREIGN KEY(codigo_oficina) REFERENCES oficina(codigo_oficina)
+);
 );
 
 
