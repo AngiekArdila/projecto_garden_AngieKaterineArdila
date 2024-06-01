@@ -1,5 +1,6 @@
--- Inserting data into gama_producto
-INSERT INTO gama_producto (gama, descripcion_texto, descripcion_html, imagen) VALUES 
+USE garden1;
+
+INSERT INTO gama_producto (gama, descripcion_texto, descripcion_html, imagen) VALUES
 ('Gama1', 'Descripción texto 1', 'Descripción HTML 1', 'imagen1.jpg'),
 ('Gama2', 'Descripción texto 2', 'Descripción HTML 2', 'imagen2.jpg'),
 ('Gama3', 'Descripción texto 3', 'Descripción HTML 3', 'imagen3.jpg'),
@@ -11,8 +12,8 @@ INSERT INTO gama_producto (gama, descripcion_texto, descripcion_html, imagen) VA
 ('Gama9', 'Descripción texto 9', 'Descripción HTML 9', 'imagen9.jpg'),
 ('Gama10', 'Descripción texto 10', 'Descripción HTML 10', 'imagen10.jpg');
 
--- Inserting data into estado_pedido
-INSERT INTO estado_pedido (id_estado_pedido, estado) VALUES 
+
+INSERT INTO estado_pedido (id_estado_pedido, estado) VALUES
 (1, 'Pendiente'),
 (2, 'En proceso'),
 (3, 'Enviado'),
@@ -24,8 +25,8 @@ INSERT INTO estado_pedido (id_estado_pedido, estado) VALUES
 (9, 'Completado'),
 (10, 'Fallido');
 
--- Inserting data into forma_pago
-INSERT INTO forma_pago (id_forma_pago, tipo) VALUES 
+
+INSERT INTO forma_pago (id_forma_pago, tipo) VALUES
 (1, 'Tarjeta de crédito'),
 (2, 'PayPal'),
 (3, 'Transferencia bancaria'),
@@ -38,8 +39,7 @@ INSERT INTO forma_pago (id_forma_pago, tipo) VALUES
 (10, 'Ripple');
 
 
--- Inserting data into pais
-INSERT INTO pais (id_pais, nombre) VALUES 
+INSERT INTO pais (id_pais, nombre) VALUES
 (1, 'Estados Unidos'),
 (2, 'Canadá'),
 (3, 'México'),
@@ -51,8 +51,8 @@ INSERT INTO pais (id_pais, nombre) VALUES
 (9, 'Italia'),
 (10, 'España');
 
--- Inserting data into region
-INSERT INTO region (id_region, nombre, id_pais) VALUES 
+
+INSERT INTO region (id_region, nombre, id_pais) VALUES
 (1, 'California', 1),
 (2, 'Ontario', 2),
 (3, 'Yucatán', 3),
@@ -64,8 +64,8 @@ INSERT INTO region (id_region, nombre, id_pais) VALUES
 (9, 'Lombardía', 9),
 (10, 'Cataluña', 10);
 
--- Inserting data into ciudad
-INSERT INTO ciudad (id_ciudad, nombre, id_pais, id_region) VALUES 
+
+INSERT INTO ciudad (id_ciudad, nombre, id_pais, id_region) VALUES
 (1, 'Los Ángeles', 1, 1),
 (2, 'Toronto', 2, 2),
 (3, 'Mérida', 3, 3),
@@ -77,8 +77,7 @@ INSERT INTO ciudad (id_ciudad, nombre, id_pais, id_region) VALUES
 (9, 'Milán', 9, 9),
 (10, 'Barcelona', 10, 10);
 
--- Inserting data into producto
-INSERT INTO producto (codigo_producto, nombre, gama, dimensiones, proveedor, descripcion, cantidad_en_stock, precio_venta, precio_proveedor) VALUES 
+INSERT INTO producto (codigo_producto, nombre, gama, dimensiones, proveedor, descripcion, cantidad_en_stock, precio_venta, precio_proveedor) VALUES
 ('P001', 'Producto 1', 'Gama1', '10x10x10', 'Proveedor 1', 'Descripción del producto 1', 100, 10.00, 5.00),
 ('P002', 'Producto 2', 'Gama2', '20x20x20', 'Proveedor 2', 'Descripción del producto 2', 200, 20.00, 10.00),
 ('P003', 'Producto 3', 'Gama3', '30x30x30', 'Proveedor 3', 'Descripción del producto 3', 300, 30.00, 15.00),
@@ -90,8 +89,7 @@ INSERT INTO producto (codigo_producto, nombre, gama, dimensiones, proveedor, des
 ('P009', 'Producto 9', 'Gama9', '90x90x90', 'Proveedor 9', 'Descripción del producto 9', 900, 90.00, 45.00),
 ('P010', 'Producto 10', 'Gama10', '100x100x100', 'Proveedor 10', 'Descripción del producto 10', 1000, 100.00, 50.00);
 
--- Inserting data into oficina
-INSERT INTO oficina (codigo_oficina, ciudad, pais, region, codigo_postal, linea_direccion1, linea_direccion2) VALUES 
+INSERT INTO oficina (codigo_oficina, ciudad, pais, region, codigo_postal, linea_direccion1, linea_direccion2) VALUES
 ('OFC1', 1, 1, 1, '90001', 'Dirección 1', 'Dirección 2'),
 ('OFC2', 2, 2, 2, 'M5H 2N2', 'Dirección 3', 'Dirección 4'),
 ('OFC3', 3, 3, 3, '97000', 'Dirección 5', 'Dirección 6'),
@@ -103,8 +101,7 @@ INSERT INTO oficina (codigo_oficina, ciudad, pais, region, codigo_postal, linea_
 ('OFC9', 9, 9, 9, '20100', 'Dirección 17', 'Dirección 18'),
 ('OFC10', 10, 10, 10, '08001', 'Dirección 19', 'Dirección 20');
 
--- Inserting data into empleado
-INSERT INTO empleado (codigo_empleado, nombre, apellido1, apellido2, extension, email, codigo_oficina, codigo_jefe, puesto, id_telefonoempleado) VALUES 
+INSERT INTO empleado (codigo_empleado, nombre, apellido1, apellido2, extension, email, codigo_oficina, codigo_jefe, puesto, id_telefonoempleado) VALUES
 (1, 'John', 'Doe', 'Smith', 'EXT1', 'john.doe@example.com', 'OFC1', NULL, 'Manager', 1),
 (2, 'Jane', 'Roe', 'Smith', 'EXT2', 'jane.roe@example.com', 'OFC2', 1, 'Sales', 2),
 (3, 'Alice', 'Johnson', 'Brown', 'EXT3', 'alice.johnson@example.com', 'OFC3', 1, 'Support', 3),
@@ -116,8 +113,7 @@ INSERT INTO empleado (codigo_empleado, nombre, apellido1, apellido2, extension, 
 (9, 'Grace', 'Lewis', 'Walker', 'EXT9', 'grace.lewis@example.com', 'OFC9', 4, 'HR', 9),
 (10, 'Hank', 'Martin', 'Harris', 'EXT10', 'hank.martin@example.com', 'OFC10', 5, 'Marketing', 10);
 
--- Inserting data into telefonoempleado
-INSERT INTO telefonoempleado (id_telefonoempleado, nombre, apellido1, apellido2, celular1, celular2, telefonofijo, codigo_empleado) VALUES 
+INSERT INTO telefonoempleado (id_telefonoempleado, nombre, apellido1, apellido2, celular1, celular2, telefonofijo, codigo_empleado) VALUES
 (1, 'John', 'Doe', 'Smith', '1234567890', '0987654321', '1122334455', 1),
 (2, 'Jane', 'Roe', 'Smith', '2234567890', '1987654321', '2122334455', 2),
 (3, 'Alice', 'Johnson', 'Brown', '3234567890', '2987654321', '3122334455', 3),
@@ -129,8 +125,8 @@ INSERT INTO telefonoempleado (id_telefonoempleado, nombre, apellido1, apellido2,
 (9, 'Grace', 'Lewis', 'Walker', '9234567890', '8987654321', '9122334455', 9),
 (10, 'Hank', 'Martin', 'Harris', '1234567890', '9987654321', '1022334455', 10);
 
--- Inserting data into cliente
-INSERT INTO cliente (codigo_cliente, nombre_cliente, nombre_contacto, apellido_contacto, fax, linea_direccion1, linea_direccion2, ciudad, region, pais, codigo_postal, codigo_empleado_rep_ventas, limite_credito) VALUES 
+
+INSERT INTO cliente (codigo_cliente, nombre_cliente, nombre_contacto, apellido_contacto, fax, linea_direccion1, linea_direccion2, ciudad, region, pais, codigo_postal, codigo_empleado_rep_ventas, limite_credito) VALUES
 (1, 'Cliente 1', 'Contacto 1', 'Apellido 1', '5551111', 'Dirección 1', 'Dirección 2', 1, 1, 1, '90001', 1, 10000.00),
 (2, 'Cliente 2', 'Contacto 2', 'Apellido 2', '5552222', 'Dirección 3', 'Dirección 4', 2, 2, 2, 'M5H 2N2', 2, 20000.00),
 (3, 'Cliente 3', 'Contacto 3', 'Apellido 3', '5553333', 'Dirección 5', 'Dirección 6', 3, 3, 3, '97000', 3, 30000.00),
@@ -142,8 +138,7 @@ INSERT INTO cliente (codigo_cliente, nombre_cliente, nombre_contacto, apellido_c
 (9, 'Cliente 9', 'Contacto 9', 'Apellido 9', '5559999', 'Dirección 17', 'Dirección 18', 9, 9, 9, '20100', 9, 90000.00),
 (10, 'Cliente 10', 'Contacto 10', 'Apellido 10', '5550000', 'Dirección 19', 'Dirección 20', 10, 10, 10, '08001', 10, 100000.00);
 
--- Inserting data into pago
-INSERT INTO pago (id_transaccion, codigo_cliente, forma_pago, fecha_pago, total) VALUES 
+INSERT INTO pago (id_transaccion, codigo_cliente, forma_pago, fecha_pago, total) VALUES
 ('T001', 1, 1, '2024-05-01', 100.00),
 ('T002', 2, 2, '2024-05-02', 200.00),
 ('T003', 3, 3, '2024-05-03', 300.00),
@@ -155,8 +150,8 @@ INSERT INTO pago (id_transaccion, codigo_cliente, forma_pago, fecha_pago, total)
 ('T009', 9, 9, '2024-05-09', 900.00),
 ('T010', 10, 10, '2024-05-10', 1000.00);
 
--- Inserting data into pedido
-INSERT INTO pedido (codigo_pedido, fecha_pedido, fecha_entrega, estado, comentario, codigo_cliente) VALUES 
+
+INSERT INTO pedido (codigo_pedido, fecha_pedido, fecha_entrega, estado, comentario, codigo_cliente) VALUES
 (1, '2024-05-01', '2024-05-10', 1, 'Comentario 1', 1),
 (2, '2024-05-02', '2024-05-11', 2, 'Comentario 2', 2),
 (3, '2024-05-03', '2024-05-12', 3, 'Comentario 3', 3),
@@ -168,8 +163,8 @@ INSERT INTO pedido (codigo_pedido, fecha_pedido, fecha_entrega, estado, comentar
 (9, '2024-05-09', '2024-05-18', 9, 'Comentario 9', 9),
 (10, '2024-05-10', '2024-05-19', 10, 'Comentario 10', 10);
 
--- Inserting data into detalle_pedido
-INSERT INTO detalle_pedido (detalle_pedido, codigo_pedido, codigo_producto, cantidad, precio_unidad, numero_linea) VALUES 
+
+INSERT INTO detalle_pedido (detalle_pedido, codigo_pedido, codigo_producto, cantidad, precio_unidad, numero_linea) VALUES
 (1, 1, 'P001', 10, 10.00, 1),
 (2, 2, 'P002', 20, 20.00, 2),
 (3, 3, 'P003', 30, 30.00, 3),
@@ -181,8 +176,8 @@ INSERT INTO detalle_pedido (detalle_pedido, codigo_pedido, codigo_producto, cant
 (9, 9, 'P009', 90, 90.00, 9),
 (10, 10, 'P010', 100, 100.00, 10);
 
--- Inserting data into proveedor
-INSERT INTO proveedor (id_proveedor, nombre, apellido1, apellido2, email, codigo_oficina, codigo_producto) VALUES 
+
+INSERT INTO proveedor (id_proveedor, nombre, apellido1, apellido2, email, codigo_oficina, codigo_producto) VALUES
 ('PRV1', 'Proveedor 1', 'Apellido1', 'Apellido2', 'proveedor1@example.com', 'OFC1', 'P001'),
 ('PRV2', 'Proveedor 2', 'Apellido1', 'Apellido2', 'proveedor2@example.com', 'OFC2', 'P002'),
 ('PRV3', 'Proveedor 3', 'Apellido1', 'Apellido2', 'proveedor3@example.com', 'OFC3', 'P003'),
@@ -194,24 +189,10 @@ INSERT INTO proveedor (id_proveedor, nombre, apellido1, apellido2, email, codigo
 ('PRV9', 'Proveedor 9', 'Apellido1', 'Apellido2', 'proveedor9@example.com', 'OFC9', 'P009'),
 ('PRV10', 'Proveedor 10', 'Apellido1', 'Apellido2', 'proveedor10@example.com', 'OFC10', 'P010');
 
--- Inserting data into jefe
 
 
--- Inserting data into telefonojefe
-INSERT INTO telefonojefe (codigo_jefe, nombre, apellido1, apellido2, celular1, celular2, telefonofijo) VALUES 
-(1, 'Jefe 1', 'Apellido1', 'Apellido2', '1234567890', '0987654321', '1122334455'),
-(2, 'Jefe 2', 'Apellido1', 'Apellido2', '2234567890', '1987654321', '2122334455'),
-(3, 'Jefe 3', 'Apellido1', 'Apellido2', '3234567890', '2987654321', '3122334455'),
-(4, 'Jefe 4', 'Apellido1', 'Apellido2', '4234567890', '3987654321', '4122334455'),
-(5, 'Jefe 5', 'Apellido1', 'Apellido2', '5234567890', '4987654321', '5122334455'),
-(6, 'Jefe 6', 'Apellido1', 'Apellido2', '6234567890', '5987654321', '6122334455'),
-(7, 'Jefe 7', 'Apellido1', 'Apellido2', '7234567890', '6987654321', '7122334455'),
-(8, 'Jefe 8', 'Apellido1', 'Apellido2', '8234567890', '7987654321', '8122334455'),
-(9, 'Jefe 9', 'Apellido1', 'Apellido2', '9234567890', '8987654321', '9122334455'),
-(10, 'Jefe 10', 'Apellido1', 'Apellido2', '1234567890', '9987654321', '1022334455');
 
--- Inserting data into telefonocliente
-INSERT INTO telefonocliente (id_telefonocliente, nombre, apellido1, apellido2, celular1, celular2, telefonofijo, codigo_cliente) VALUES 
+INSERT INTO telefonocliente (id_telefonocliente, nombre, apellido1, apellido2, celular1, celular2, telefonofijo, codigo_cliente) VALUES
 (1, 'Cliente 1', 'Apellido1', 'Apellido2', '1234567890', '0987654321', '1122334455', 1),
 (2, 'Cliente 2', 'Apellido1', 'Apellido2', '2234567890', '1987654321', '2122334455', 2),
 (3, 'Cliente 3', 'Apellido1', 'Apellido2', '3234567890', '2987654321', '3122334455', 3),
@@ -223,8 +204,7 @@ INSERT INTO telefonocliente (id_telefonocliente, nombre, apellido1, apellido2, c
 (9, 'Cliente 9', 'Apellido1', 'Apellido2', '9234567890', '8987654321', '9122334455', 9),
 (10, 'Cliente 10', 'Apellido1', 'Apellido2', '1234567890', '9987654321', '1022334455', 10);
 
--- Inserting data into telefonooficina
-INSERT INTO telefonooficina (telefono, nombre, apellido1, apellido2, celular1, celular2, telefonofijo, codigo_oficina) VALUES 
+INSERT INTO telefonooficina (telefono, nombre, apellido1, apellido2, celular1, celular2, telefonofijo, codigo_oficina) VALUES
 (1, 'Oficina 1', 'Apellido1', 'Apellido2', '1234567890', '0987654321', '1122334455', 'OFC1'),
 (2, 'Oficina 2', 'Apellido1', 'Apellido2', '2234567890', '1987654321', '2122334455', 'OFC2'),
 (3, 'Oficina 3', 'Apellido1', 'Apellido2', '3234567890', '2987654321', '3122334455', 'OFC3'),
@@ -235,3 +215,5 @@ INSERT INTO telefonooficina (telefono, nombre, apellido1, apellido2, celular1, c
 (8, 'Oficina 8', 'Apellido1', 'Apellido2', '8234567890', '7987654321', '8122334455', 'OFC8'),
 (9, 'Oficina 9', 'Apellido1', 'Apellido2', '9234567890', '8987654321', '9122334455', 'OFC9'),
 (10, 'Oficina 10', 'Apellido1', 'Apellido2', '1234567890', '9987654321', '1022334455', 'OFC10');
+UPDATE `garden1`.`pago` SET `fecha_pago` = '2008-05-10' WHERE (`id_transaccion` = 'T010');
+UPDATE `garden1`.`pedido` SET `fecha_entrega` = '2024-01-15' WHERE (`codigo_pedido` = '6');
