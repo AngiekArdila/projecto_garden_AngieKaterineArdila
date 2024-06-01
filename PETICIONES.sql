@@ -102,10 +102,9 @@ JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado
 WHERE ci.nombre = 'Madrid'
 AND (e.codigo_empleado = 11 OR e.codigo_empleado = 30);
 
-
-
-
 -- Consultas multitabla (Composición interna)
+
+
 -- 1 Obtén un listado con el nombre de cada cliente y el nombre y apellido de su
 -- representante de ventas.
 SELECT c.nombre_cliente, e.nombre, e.apellido1
@@ -205,7 +204,7 @@ WHERE c.codigo_cliente = pe.codigo_cliente
 AND pe.numero_pedido = lp.numero_pedido
 AND lp.codigo_producto = p.codigo_producto;
 
-consultas multitabla (composicion externa)
+-- consultas multitabla (composicion externa)
 
 -- 1
 SELECT c.nombre_cliente
